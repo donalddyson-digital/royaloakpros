@@ -106,8 +106,22 @@ em { font-style: italic; color: var(--rust); }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
-.nav-logo { display: flex; align-items: center; gap: 12px; }
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  min-width: 0;
+}
+.nav-logo img {
+  display: block;
+  height: 40px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
 .logo-mark {
   display: inline-grid;
   place-items: center;
@@ -132,6 +146,7 @@ em { font-style: italic; color: var(--rust); }
   display: flex;
   gap: 32px;
   align-items: center;
+  flex-shrink: 0;
 }
 .nav-links a {
   font-size: 14px;
@@ -146,12 +161,22 @@ em { font-style: italic; color: var(--rust); }
   padding: 10px 18px;
   border-radius: 100px;
   font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: background .2s ease, transform .2s ease;
 }
 .nav-cta:hover { background: var(--rust); transform: translateY(-1px); }
 
 @media (max-width: 720px) {
+  .nav-inner { padding: 12px 18px; gap: 12px; }
   .nav-links li:not(:last-child) { display: none; }
+  .nav-links { gap: 0; }
+  .nav-logo img { height: 32px; }
+  .nav-cta { padding: 9px 14px; font-size: 13px; }
+}
+@media (max-width: 380px) {
+  .nav-logo img { height: 28px; }
+  .nav-cta { padding: 8px 12px; font-size: 12px; }
 }
 
 /* =========================================================
@@ -392,11 +417,11 @@ em { font-style: italic; color: var(--rust); }
 .bento-tile:hover::before { opacity: 1; }
 
 .tile-feature { grid-column: span 2; grid-row: span 2; background: var(--ink); color: var(--cream); border-color: var(--ink); }
-.tile-feature h3 { font-size: 2.2rem; }
+.tile-feature h3 { font-size: 2.2rem; color: var(--cream); }
 .tile-feature .tile-tag { background: var(--rust); color: var(--cream); }
 .tile-feature .tile-deco { color: rgba(251, 247, 239, 0.08); }
+.tile-feature .tile-body p { color: rgba(251, 247, 239, 0.88); }
 .tile-feature .tile-link { color: var(--gold); }
-.tile-feature p { color: rgba(251, 247, 239, 0.78); }
 .tile-feature:hover { border-color: var(--rust); }
 
 .tile-tall  { grid-column: span 2; grid-row: span 2; }
@@ -685,9 +710,13 @@ em { font-style: italic; color: var(--rust); }
   align-items: center;
   gap: 14px;
 }
-.footer-brand .logo-mark {
-  background: var(--rust);
-  color: var(--cream);
+.footer-brand img {
+  display: block;
+  height: 44px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 .footer-brand strong {
   display: block;
