@@ -448,6 +448,75 @@ em { font-style: italic; color: var(--rust); }
   margin-bottom: 16px;
 }
 
+/* Pro business logos (brand marks) */
+.tile-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 0 18px;
+  margin-bottom: 4px;
+}
+.tile-logo img {
+  display: block;
+  height: 44px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  object-position: left center;
+}
+/* Feature tile (dark background) — add subtle light plate so logos remain visible */
+.tile-logo-dark {
+  align-self: flex-start;
+  background: rgba(251, 247, 239, 0.96);
+  padding: 10px 16px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+.tile-logo-dark img {
+  height: 48px;
+  max-width: 200px;
+}
+/* Wide tile — place logo inline on the right instead of top for a horizontal layout */
+.tile-wide { position: relative; }
+.tile-logo-inline {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-end;
+  max-width: 40%;
+}
+.tile-logo-inline img {
+  height: 56px;
+  max-width: 220px;
+  object-position: right center;
+}
+
+@media (max-width: 900px) {
+  .tile-logo img { height: 40px; max-width: 160px; }
+  .tile-logo-dark img { height: 42px; max-width: 170px; }
+  /* On mobile the wide tile is full-width — move logo back to the top flow */
+  .tile-logo-inline {
+    position: static;
+    justify-content: flex-start;
+    max-width: 100%;
+    padding: 8px 0 18px;
+  }
+  .tile-logo-inline img {
+    height: 44px;
+    max-width: 180px;
+    object-position: left center;
+  }
+}
+@media (max-width: 480px) {
+  .tile-logo img { height: 36px; max-width: 140px; }
+  .tile-logo-dark { padding: 8px 14px; }
+  .tile-logo-dark img { height: 38px; max-width: 150px; }
+  .tile-logo-inline img { height: 40px; max-width: 160px; }
+}
+
 .tile-body { display: flex; flex-direction: column; gap: 10px; }
 .tile-body p { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.55; }
 
