@@ -705,6 +705,89 @@ em { font-style: italic; color: var(--rust); }
 }
 .field textarea { resize: vertical; min-height: 110px; font-family: var(--font-body); }
 
+/* Upgraded provider dropdown — craftsman-modern */
+.provider-select {
+  position: relative;
+}
+.provider-select select {
+  width: 100%;
+  padding: 16px 48px 16px 18px;
+  border: 1.5px solid var(--ink);
+  border-radius: 12px;
+  background: var(--cream);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+  box-shadow: 0 2px 0 0 var(--ink), 0 6px 16px rgba(26, 22, 18, 0.08);
+  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.provider-select select:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 0 0 var(--ink), 0 10px 22px rgba(26, 22, 18, 0.12);
+}
+.provider-select select:focus {
+  outline: none;
+  border-color: var(--rust);
+  box-shadow: 0 2px 0 0 var(--rust), 0 0 0 4px rgba(184, 73, 42, 0.14);
+  background: #fff;
+}
+.provider-select select option {
+  font-weight: 500;
+  padding: 10px;
+  background: var(--cream);
+  color: var(--ink);
+}
+.provider-select select option:checked {
+  background: var(--ink);
+  color: var(--cream);
+}
+.provider-select select option:disabled {
+  color: rgba(26, 22, 18, 0.3);
+  font-weight: 400;
+}
+.provider-chevron {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+  transition: border-color .2s ease;
+}
+.provider-select select:focus ~ .provider-chevron {
+  border-color: var(--rust);
+}
+.field-help {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+}
+.field-help-pro {
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(184, 73, 42, 0.25);
+  color: var(--rust-deep);
+  font-style: normal;
+  font-weight: 500;
+}
+.field-help-pro strong {
+  font-weight: 700;
+  color: var(--rust);
+}
+
 .btn-spinner {
   display: none;
   width: 16px; height: 16px;
