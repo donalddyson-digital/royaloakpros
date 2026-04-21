@@ -520,6 +520,55 @@ em { font-style: italic; color: var(--rust); }
 .tile-body { display: flex; flex-direction: column; gap: 10px; }
 .tile-body p { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.55; }
 
+/* Pro metadata — high-end fine print supporting the business name */
+.tile-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: -2px;
+  margin-bottom: 2px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(26, 22, 18, 0.55);
+  font-feature-settings: "tnum" 1;
+}
+.tile-meta .meta-rating,
+.tile-meta .meta-longevity {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.tile-meta .meta-rating em {
+  font-style: normal;
+  opacity: 0.5;
+  padding: 0 1px;
+}
+.tile-meta .meta-star {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 0;
+  margin-right: 2px;
+  line-height: 1;
+}
+.tile-meta .meta-sep {
+  color: rgba(26, 22, 18, 0.25);
+  font-weight: 400;
+}
+/* Dark feature tile — lighter fine print so it reads on ink background */
+.tile-feature .tile-meta {
+  color: rgba(251, 247, 239, 0.65);
+}
+.tile-feature .tile-meta .meta-sep {
+  color: rgba(251, 247, 239, 0.3);
+}
+@media (max-width: 480px) {
+  .tile-meta { font-size: 10px; letter-spacing: 0.1em; gap: 6px; }
+}
+
 .tile-link {
   margin-top: 14px;
   font-size: 13px;
